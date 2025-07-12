@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhanush Gundu | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0f1123;
+      color: #fff;
+      transition: all 0.4s ease;
+    }
+
+    body.light-mode {
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+      position: sticky;
+      top: 0;
+      background: #0f1123;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,242,255,0.1);
+      transition: 0.4s;
+    }
+
+    body.light-mode header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      color: #00f2ff;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    body.light-mode .logo {
+      color: #0ea5e9;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00f2ff;
+    }
+
+    body.light-mode .navbar a {
+      color: #333;
+    }
+
+    body.light-mode .navbar a:hover {
+      color: #0ea5e9;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      color: #00f2ff;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    body.light-mode .theme-toggle {
+      color: #0ea5e9;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(100vh - 100px);
+      padding: 0 10%;
+      gap: 60px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .content h1 span {
+      color: #00f2ff;
+    }
+
+    body.light-mode .content h1 span {
+      color: #0ea5e9;
+    }
+
+    .content h3 {
+      font-size: 24px;
+      color: #00f2ff;
+      margin-bottom: 15px;
+      min-height: 30px;
+    }
+
+    body.light-mode .content h3 {
+      color: #0ea5e9;
+    }
+
+    .content p {
+      max-width: 450px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .about-me {
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    body.light-mode .about-me {
+      color: #444;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      display: inline-block;
+      background: #00f2ff;
+      color: #000;
+      padding: 10px 25px;
+      margin: 10px 10px 10px 0;
+      border-radius: 5px;
+      border: 2px solid #00f2ff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .buttons a:nth-child(2),
+    .buttons a:nth-child(3) {
+      background: transparent;
+      color: #00f2ff;
+    }
+
+    .buttons a:hover {
+      transform: scale(1.05);
+    }
+
+    body.light-mode .buttons a {
+      background: #0ea5e9;
+      color: white;
+      border-color: #0ea5e9;
+    }
+
+    body.light-mode .buttons a:nth-child(2),
+    body.light-mode .buttons a:nth-child(3) {
+      background: transparent;
+      color: #0ea5e9;
+    }
+
+    .socials a {
+      margin-top: 20px;
+      display: inline-block;
+      color: white;
+      font-size: 20px;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00f2ff;
+    }
+
+    body.light-mode .socials a {
+      color: #444;
+    }
+
+    body.light-mode .socials a:hover {
+      color: #0ea5e9;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #00f2ff;
+      color: #000;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin: 5px 8px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    body.light-mode .skills span {
+      background: #0ea5e9;
+      color: white;
+    }
+
+    .image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 50px;
+    }
+
+    .circle-frame {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #00f2ff;
+      box-shadow: 0 0 40px rgba(0, 242, 255, 0.7);
+      transition: 0.3s ease-in-out;
+    }
+
+    .circle-frame:hover {
+      box-shadow: 0 0 80px rgba(0, 242, 255, 1);
+      transform: translateY(-10px);
+    }
+
+    .circle-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s ease-in-out;
+      filter: brightness(95%);
+    }
+
+    .circle-frame img:hover {
+      filter: brightness(110%);
+    }
+
+    .waves {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 100px;
+      background: rgba(0, 242, 255, 0.1);
+      border-radius: 100%;
+      animation: waveAnimation 6s ease-in-out infinite;
+    }
+
+    .wave1 { left: -50%; bottom: 0; animation-delay: 0s; }
+    .wave2 { left: -50%; bottom: 20px; animation-delay: 3s; }
+
+    @keyframes waveAnimation {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(25%); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      background: #0d0f21;
+      color: #aaa;
+      transition: 0.3s;
+    }
+
+    .contact-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .contact-info p {
+      margin: 4px 0;
+    }
+
+    /* Hire Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #12162e;
+      color: white;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 10px;
+      position: relative;
+      animation: fadeIn 0.4s ease;
+    }
+
+    body.light-mode .modal-content {
+      background: #fff;
+      color: #333;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .modal-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .modal-content ul li {
+      margin: 8px 0;
+    }
+
+    .modal-buttons a {
+      display: inline-block;
+      background: #00f2ff;
+      color: #000;
+      padding: 8px 16px;
+      margin: 10px 5px 0;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .modal-buttons a:hover {
+      transform: scale(1.05);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #00f2ff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .image {
+        justify-content: center;
+        padding-right: 0;
+        margin-top: 30px;
+      }
+      .circle-frame {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2 class="logo">Dhanush Gundu</h2>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  </header>
+
+  <div class="waves">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+  </div>
+
+  <section class="hero">
+    <div class="content">
+      <h1>Hi, I'm <span>Dhanush Gundu</span></h1>
+      <h3><span class="typing"></span></h3>
+      <p>I love building amazing digital experiences. Skilled in Python, Java, AI & Fullstack development.</p>
+      <div class="about-me">
+        I'm a passionate tech enthusiast who believes in creating real-world impact through clean, scalable, and user-friendly software. I constantly strive to learn new things and contribute to innovative projects.
+      </div>
+      <div class="buttons">
+        <a href="javascript:void(0)" onclick="openHireModal()">Hire Me</a>
+        <a href="javascript:void(0)" onclick="openLetsTalkModal()">Let's Talk</a>
+        <a href="dhanush_intern.pdf" download>📄 Resume</a>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="skills">
+        <span>Python</span><span>Java</span><span>HTML</span><span>CSS</span>
+        <span>JavaScript</span><span>MySQL</span><span>AI & ML</span>
+      </div>
+    </div>
+    <div class="image">
+      <div class="circle-frame">
+        <img src="profile3.png" alt="Dhanush Gundu">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Dhanush Gundu | <a href="mailto:gundudhanush199@gmail.com">gundudhanush199@gmail.com</a></p>
+    <div class="contact-info">
+      <p><strong>Email:</strong> gundudhanush199@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9491702710</p>
+      <p><strong>Location:</strong> Hyderabad, Telangana, India</p>
+    </div>
+  </footer>
+
+  <!-- Hire Me Modal -->
+  <div id="hireModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeHireModal()">&times;</span>
+      <h2>Why Hire Me?</h2>
+      <ul>
+        <li>🚀 Fullstack Developer with AI & Python experience</li>
+        <li>🎯 Strong problem-solving & clean code practices</li>
+        <li>💬 Excellent communication & team collaboration</li>
+        <li>✅ Fast learner & adaptable to new technologies</li>
+      </ul>
+      <div class="modal-buttons">
+        <a href="mailto:gundudhanush199@gmail.com">📧 Email Me</a>
+        <a href="dhanush_intern.pdf" download>📄 Resume</a>
+        <a href="https://www.linkedin.com/in/dhanush-gundu/">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <!-- Let's Talk Modal -->
+<div id="letsTalkModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeLetsTalkModal()">&times;</span>
+    <h2>Let's Talk!</h2>
+    <p>I'm open to exciting internships, collaborations, or full-time roles.</p>
+    <div class="modal-buttons">
+      <a href="mailto:gundudhanush199@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/dhanush-gundu/" target="_blank">🔗 LinkedIn</a>
+      <a href="tel:+919491702710">📞 Call</a>
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+    const roles = ["Software Developer", "AI Enthusiast", "Fullstack Engineer", "Open Source Contributor"];
+    let i = 0, j = 0, current = "", isDeleting = false, speed = 100;
+
+    function type() {
+      let target = document.querySelector(".typing");
+      if (i < roles.length) {
+        current = roles[i];
+        if (!isDeleting) {
+          target.innerHTML = current.substring(0, j++) + "|";
+          if (j > current.length + 5) isDeleting = true;
+        } else {
+          target.innerHTML = current.substring(0, j--) + "|";
+          if (j === 0) { isDeleting = false; i = (i + 1) % roles.length; }
+        }
+      }
+      setTimeout(type, speed);
+    }
+    type();
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function openHireModal() {
+      document.getElementById("hireModal").style.display = "flex";
+    }
+
+    function closeHireModal() {
+      document.getElementById("hireModal").style.display = "none";
+    }
+    function openLetsTalkModal() {
+  document.getElementById("letsTalkModal").style.display = "flex";
+}
+
+function closeLetsTalkModal() {
+  document.getElementById("letsTalkModal").style.display = "none";
+}
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("hireModal");
+      if (event.target == modal) {
+        closeHireModal();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Dhanush Gundu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0f1123;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 30px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0f1123;
+      box-shadow: 0 2px 5px rgba(0,242,255,0.1);
+    }
+
+    .logo {
+      color: #00f2ff;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      color: #00f2ff;
+    }
+
+    main {
+      padding: 80px 10%;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    form {
+      max-width: 600px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1e223f;
+      color: white;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #00f2ff;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+      color: white;
+    }
+
+    .info {
+      margin-top: 40px;
+      font-size: 15px;
+    }
+
+    .info p {
+      margin: 5px 0;
+      color: #aaa;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      background-color: #0d0f21;
+    }
+
+    @media (max-width: 600px) {
+      header, main {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Dhanush Gundu</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Let's Connect</h1>
+    <p>Feel free to reach out for collaborations, freelance work, or just to chat!</p>
+    <form action="mailto:gundudhanush199@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="info">
+      <p><strong>Email:</strong> gundudhanush199@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9491702710</p>
+      <p><strong>Location:</strong> Hyderabad, Telangana, India</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Dhanush Gundu. All rights reserved.
+  </footer>
+
+</body>
+</html>
